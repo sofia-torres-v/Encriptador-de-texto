@@ -5,33 +5,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Encriptador de texto</title>
+
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles/mobile.css" />
     <link rel="stylesheet" href="./styles/desktop.css" media="(min-width: 800px)" />
 </head>
 
 <body>
+    <header>
+        <div class="header__logo container">
+            <img class="header__logo-img " src="./images/Logo.png" alt="Logo de la aplicación"></img>
+        </div>
+    </header>
     <main>
         <section>
-            <img src="./images/Logo.png" alt="Logo de la aplicación"></img>
-            <div class="container">
-                <div class="container__column1">
-                    <div class="container__text">
-                        <textarea placeholder="Ingrese el texto que desees encriptar o desencriptar aquí"  name="textoUsuario" id="textoUsuario" cols="70" rows="10"></textarea>
-                      <div class="container__buttons">
-                        <button type="button">Encriptar</button>
-                        <button type="button">Desencriptar</button>
-                      </div>
-                    </div>
+            <div class="content">
+                <div class="content__column1">
+                    <textarea class="column1__area" placeholder="Ingrese texto aquí" name="textoUsuario"
+                        id="textoUsuario" cols="70" rows="10"></textarea>
+                    
+                        <div class="box">
+                            <i class='bx bxs-alarm-exclamation'></i>
+                            <p>Solo letras minúsculas y sin acentos</p>
+                        </div>
+                        <div class="column1__buttons">
+                            <button type="button">Encriptar</button>
+                            <button type="button">Desencriptar</button>
+                        </div>
+                    
                 </div>
-                <div class="container__column2">
-                 <div class="container__image">
+
+                <div class="content__column2">
                     <img src="./images/Muñeco.png" alt="Ilustración de un muñeco">
                     <h2>Ningun mensaje fue encriptado</h2>
-                    <h3>Ingrese el texto que desees encriptar o desencriptar</h3>
-                 </div>
+                    <p>Ingrese el texto que desees encriptar o desencriptar</p>
+                    <button>Copiar</button>
                 </div>
             </div>
         </section>
     </main>
+
 
     <script src="app.js"></script>
 </body>
