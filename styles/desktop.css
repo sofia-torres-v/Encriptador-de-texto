@@ -1,15 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background: #f3f5fc;
-}
-
 /* Header  */
-.container {
+.header__logo {
     width: 90%;
     margin: 0 auto;
     max-width: 1200px;
@@ -22,7 +12,7 @@ body {
 /* Main  */
 .content {
     width: 80%;
-    margin: auto 40px auto auto;
+    margin: auto 55px auto auto;
     /* border: 1px solid red; */
     display: grid;
     align-items: end;
@@ -31,40 +21,75 @@ body {
 }
 
 .content__column1 {
-    /* background-color: rgb(232, 194, 198); */
-    height: 85%;
+    /* background-color: rgb(184, 167, 168); */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
-.content__column2 {
-    /* background-color: rgb(170, 209, 170); */
-    height: calc(100% + 45px);
-}
 .column1__area {
     color: #0a3871;
-    font-size: 25px;
+    font-size: 32px;
     font-family: "Inter", sans-serif;
     width: 80%;
+    height: 50%;
     background: transparent;
     resize: none;
     outline: none;
     border: none;
+    /* background-color: pink; */
 }
 
 .column1__area::placeholder {
     color: #0a3871;
 }
-.box {
-    display: flex;
-    gap: 8px;
+.column1__span {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    line-height: 30px;
 }
 .column1__buttons {
-    gap: 8px;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
 }
+
 .column1__buttons button {
-    padding: 10px 30px;
-    background-color: #0a3871;
+    width: 40%;
+    max-width: 280px;
+    padding: 15px;
     border-radius: 10px;
+    font-size: 18px;
+}
+.column1__button-encrypt {
     border: none;
+    background-color: #0a3871;
     color: #fff;
-    font-size: 16px;
+}
+.column1__button-decrypt {
+    background-color: #d8dfe8;
+    color: #000;
+    border: 1px solid #0a3871;
+}
+
+.content__column2 {
+    /* background-color: rgb(170, 209, 170); */
+    height: calc(100% + 50px);
+    background-color: #fff;
+    border-radius: 24px;
+    padding: 25px 20px;
+    box-shadow: #000000 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+.content__column2-img {
+    width: 85%;
+}
+.oculto {
+    display: none;
 }

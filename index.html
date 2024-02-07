@@ -12,38 +12,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./styles/mobile.css" />
-    <link rel="stylesheet" href="./styles/desktop.css" media="(min-width: 800px)" />
+    <!-- <link rel="stylesheet" href="./styles/desktop.css" media="(min-width: 750px)" /> -->
 </head>
 
 <body>
-    <header>
-        <div class="header__logo container">
-            <img class="header__logo-img " src="./images/Logo.png" alt="Logo de la aplicación"></img>
-        </div>
+    <header class="header">
+            <img class="header__logo" src="./images/Logo.png" alt="Logo de la aplicación"></img>
     </header>
     <main>
         <section>
             <div class="content">
                 <div class="content__column1">
-                    <textarea class="column1__area" placeholder="Ingrese texto aquí" name="textoUsuario"
-                        id="textoUsuario" cols="70" rows="10"></textarea>
-                    
-                        <div class="box">
-                            <i class='bx bxs-alarm-exclamation'></i>
-                            <p>Solo letras minúsculas y sin acentos</p>
-                        </div>
+                    <textarea class="column1__area" cols="70" rows="10" placeholder="Ingrese texto aquí" name="textoUsuario"
+                        id="textoUsuario"></textarea>
+
+                    <div class="column1__info">
+                        <span class="info__icon" ><i class='bx bxs-alarm-exclamation'></i></span>
+                        <span class="column1__message">Solo letras minúsculas y sin acentos</span>
+
                         <div class="column1__buttons">
-                            <button type="button">Encriptar</button>
-                            <button type="button">Desencriptar</button>
+                            <button class="buttons__encrypt" type="button">Encriptar</button>
+                            <button class="buttons__decrypt" type="button">Desencriptar</button>
                         </div>
-                    
+                    </div>
+
                 </div>
 
                 <div class="content__column2">
-                    <img src="./images/Muñeco.png" alt="Ilustración de un muñeco">
-                    <h2>Ningun mensaje fue encriptado</h2>
-                    <p>Ingrese el texto que desees encriptar o desencriptar</p>
-                    <button>Copiar</button>
+                    <img class="column2__img hidden-img" src="./images/Muñeco.png" alt="Ilustración de un muñeco">
+                    <h2 class="column2__heading" >Ningun mensaje fue encriptado</h2>
+                    <p class="column2__description" >Ingrese el texto que desees encriptar o desencriptar</p>
+                    <button class="column2__button-copy hidden">Copiar</button>
                 </div>
             </div>
         </section>
