@@ -16,19 +16,23 @@
 </head>
 
 <body>
-    <header class="header">
-            <img class="header__logo" src="./images/Logo.png" alt="Logo de la aplicación"></img>
+    <header >
+           <div class="header">
+            <img class="header__logo" src="./images/logoA.png" alt="Logo de la aplicación"></img>
+           </div>
     </header>
     <main>
         <section>
             <div class="content">
                 <div class="content__column1">
-                    <textarea class="column1__area" cols="70" rows="10" placeholder="Ingrese texto aquí" name="textoUsuario"
+                    <textarea class="column1__area" cols="70" rows="10" placeholder="Ingrese texto aquí ..." name="textoUsuario"
                         id="textoUsuario"></textarea>
 
                     <div class="column1__info">
+                    <div class="box">
                         <span class="info__icon" ><i class='bx bxs-alarm-exclamation'></i></span>
-                        <span class="column1__message">Solo letras minúsculas y sin acentos</span>
+                        <span class="column1__message">Recuerda solo letras minúsculas y sin acentos</span>
+                    </div>
 
                         <div class="column1__buttons">
                             <button class="buttons__encrypt"  type="button" onclick="obtenerValor()">Encriptar</button>
@@ -39,9 +43,9 @@
                 </div>
 
                 <div class="content__column2 ">
-                    <img class="column2__img hidden-img" src="./images/Muñeco.png" alt="Ilustración de un muñeco">
-                    <h2 class="column2__heading" >Ningun mensaje fue encriptado</h2>
-                    <p class="column2__description" >Ingrese el texto que desees encriptar o desencriptar</p>
+                    <img class="column2__img hidden-img" src="./images/lupa.jpg" alt="Ilustración de un muñeco">
+                    <p class="column2__heading" >Parece que ningún mensaje fue encriptado</p>
+                    <p class="column2__description" >Ingresa tu texto y verás los resultados aquí</p>
                     <!-- <button class="column2__button-copy hidden">Copiar</button> -->
                 </div>
             </div>
