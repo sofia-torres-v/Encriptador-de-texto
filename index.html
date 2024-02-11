@@ -12,13 +12,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./styles/mobile.css" />
-    <!-- <link rel="stylesheet" href="./styles/desktop.css" media="(min-width: 750px)" /> -->
 </head>
 
 <body>
     <header >
            <div class="header">
-            <img class="header__logo" src="./images/logoA.png" alt="Logo de la aplicación"></img>
+            <img class="header__logo" src="./images/Group11.png" alt="Logo de la aplicación"></img>
            </div>
     </header>
     <main>
@@ -26,7 +25,7 @@
             <div class="content">
                 <div class="content__column1">
                     <textarea class="column1__area" cols="70" rows="10" placeholder="Ingrese texto aquí ..." name="textoUsuario"
-                        id="textoUsuario"></textarea>
+                        id="user-text"></textarea>
 
                     <div class="column1__info">
                     <div class="box">
@@ -35,16 +34,19 @@
                     </div>
 
                         <div class="column1__buttons">
-                            <button class="buttons__encrypt"  type="button" onclick="obtenerValor()">Encriptar</button>
-                            <button class="buttons__decrypt" type="button">Desencriptar</button>
+                            <button onclick="handleEncryption();" class="buttons__encrypt"  type="button" >Encriptar</button>
+                            <button onclick="handleDecryption();" class="buttons__decrypt" type="button">Desencriptar</button>
                         </div>
                     </div>
 
                 </div>
 
                 <div class="content__column2 ">
-                    <img class="column2__img hidden-img" src="./images/lupa.jpg" alt="Ilustración de un muñeco">
-                    <p class="column2__heading" >Parece que ningún mensaje fue encriptado</p>
+                    <div class="returned-message" >
+                        <p>aqui</p>
+                    </div>
+                    <img class="column2__img hidden-img" src="./images/persona-con-lupa.png" alt="Ilustración de un muñeco">
+                    <p class="column2__heading" >Parece que no ingresaste ningun mensaje</p>
                     <p class="column2__description" >Ingresa tu texto y verás los resultados aquí</p>
                     <!-- <button class="column2__button-copy hidden">Copiar</button> -->
                 </div>
