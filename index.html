@@ -42,13 +42,12 @@
                 </div>
 
                 <div class="content__column2 ">
-                    <div class="returned-message" >
-                        <p>aqui</p>
-                    </div>
+                    <textarea class="column2__area" cols="70" rows="10" placeholder="decifrando..." name="textoUsuario"
+                    id="returned-message"></textarea>
                     <img class="column2__img hidden-img" src="./images/persona-con-lupa.png" alt="Ilustración de un muñeco">
                     <p class="column2__heading" >Parece que no ingresaste ningun mensaje</p>
                     <p class="column2__description" >Ingresa tu texto y verás los resultados aquí</p>
-                    <!-- <button class="column2__button-copy hidden">Copiar</button> -->
+                    <button  onclick="handleCopy()" class="column2__button-copy hidden">Copiar</button>
                 </div>
             </div>
         </section>
