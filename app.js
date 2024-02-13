@@ -1,5 +1,9 @@
 const inputText = document.querySelector("#user-text");
 const outputText = document.querySelector("#returned-message");
+const imagenOcultar = document.querySelector("#image-lupa");
+const textFinal = document.querySelector(".text-final");
+const contentColumn = document.querySelector(".content__column2");
+const buttonCopy = document.querySelector(".column2__button-copy ");
 
 const codedVowels = [
     ["e", "enter"],
@@ -11,13 +15,17 @@ const codedVowels = [
 
 function handleEncryption() {
     const encryptedText = encrypt();
-    outputText.value = encryptedText;
+    outputText.innerHTML = encryptedText;
+    imagenOcultar.style.display = "none";
+    textFinal.style.display = "none";
+    buttonCopy.style.display = "block";
+    contentColumn.classList.add("ajustar");
     clearInput();
 }
 
 function handleDecryption() {
     const decryptedText = decrypt();
-    outputText.value = decryptedText;
+    outputText.textContent = decryptedText;
     clearInput();
 }
 
@@ -36,7 +44,7 @@ function encrypt() {
 }
 
 function decrypt() {
-    let decryptMessage = outputText.value.toLowerCase();
+    let decryptMessage = outputText.textContent.toLowerCase();
 
     for (let i = 0; i < codedVowels.length; i++) {
         decryptMessage = decryptMessage.replaceAll(
@@ -54,6 +62,6 @@ function clearInput() {
 }
 
 function handleCopy() {
-    const textCopiado = outputText.value;
+    const textCopiado = outputText.textContent;
     navigator.clipboard.writeText(textCopiado);
 }
