@@ -17,7 +17,7 @@ function handleEncryption() {
 
 function handleDecryption() {
     const decryptedText = decrypt();
-    inputText.value = decryptedText;
+    outputText.value = decryptedText;
     clearInput();
 }
 
