@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
@@ -14,37 +14,42 @@
 </head>
 
 <body>
-    <header >
-           <div class="header">
-            <img class="header__logo" src="./images/Group11.png" alt="Logo de la aplicación"></img>
-           </div>
+    <header>
+        <div class="header">
+            <img class="header__logo" src="./images/logo.png" alt="Logo de la aplicación"></img>
+        </div>
     </header>
     <main>
         <section>
             <div class="content">
                 <div class="content__column1">
-                    <textarea class="column1__area" cols="70" rows="10" placeholder="Ingrese texto aquí ..." name="textoUsuario"
-                        id="user-text"></textarea>
+                    <textarea class="column1__textarea" cols="70" rows="10" placeholder="Ingrese texto aquí ..."
+                        name="userText" id="left-textarea"></textarea>
 
                     <div class="column1__info">
-                    <div class="box">
-                        <span class="info__icon" ><i class='bx bxs-alarm-exclamation'></i></span>
-                        <span class="column1__message">Recuerda solo letras minúsculas y sin acentos</span>
-                    </div>
+                        <div class="info__box">
+                            <span class="info__icon"><i class='bx bxs-alarm-exclamation'></i></span>
+                            <span class="info__message">Recuerda solo letras minúsculas y sin acentos</span>
+                        </div>
 
                         <div class="column1__buttons">
-                            <button class="buttons__encrypt"  type="button" >Encriptar</button>
-                            <button class="buttons__decrypt" type="button">Desencriptar</button>
+                            <button class="button__encrypt" type="button">Encriptar</button>
+                            <button class="button__decrypt" type="button">Desencriptar</button>
                         </div>
                     </div>
 
                 </div>
 
                 <div class="content__column2 ">
-                    <img class="column2__img " id="image-lupa" src="./images/persona-con-lupa.png" alt="Ilustración de un muñeco">
-                    <h3  class="subtitle">Parece que no ingresaste ningun mensaje</h3>
-                    <textarea class="column2__heading"  id="returned-message"></textarea>
-                    <p class="column2__description text-final" >Ingresa tu texto y verás los resultados aquí</p>
+                    <img class="column2__img " id="hidden-image" src="./images/persona-con-lupa.png"
+                        alt="Ilustración de un muñeco">
+
+                    <h3 class="column2__subtitle">Parece que no ingresaste ningun mensaje</h3>
+
+                    <textarea class="column2__textarea" id="right-textarea"></textarea>
+
+                    <p class="column2__description">Ingresa tu texto y verás los resultados aquí</p>
+
                     <button class="column2__button-copy hidden">Copiar</button>
                 </div>
             </div>

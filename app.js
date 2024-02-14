@@ -1,15 +1,17 @@
-const inputText = document.querySelector("#user-text");
-const outputText = document.querySelector("#returned-message");
-const buttonsEncrypt = document.querySelector(".buttons__encrypt");
-const buttonsDecrypt = document.querySelector(".buttons__decrypt");
-const imagenOcultar = document.querySelector("#image-lupa");
-const textFinal = document.querySelector(".text-final");
-const subtitle = document.querySelector(".subtitle");
-const contentColumn = document.querySelector(".content__column2");
+const inputText = document.querySelector("#left-textarea");
+const outputText = document.querySelector("#right-textarea");
+
+const buttonEncrypt = document.querySelector(".button__encrypt");
+const buttonDecrypt = document.querySelector(".button__decrypt");
 const buttonCopy = document.querySelector(".column2__button-copy ");
 
-buttonsEncrypt.addEventListener("click", handleEncryption);
-buttonsDecrypt.addEventListener("click", handleDecryption);
+const contentColumnRight = document.querySelector(".content__column2");
+const imagenColumnRight = document.querySelector("#hidden-image");
+const subtitleColumnRight = document.querySelector(".column2__subtitle");
+const textColumnRight = document.querySelector(".column2__description");
+
+buttonEncrypt.addEventListener("click", handleEncryption);
+buttonDecrypt.addEventListener("click", handleDecryption);
 
 const codedVowels = [
     ["e", "enter"],
@@ -22,7 +24,7 @@ const codedVowels = [
 function handleEncryption() {
     const encryptedText = encrypt();
     outputText.innerHTML = encryptedText;
-    reuse();
+    toggleVisibility();
     clearInput();
 }
 
@@ -30,8 +32,13 @@ function handleDecryption() {
     const decryptedText = decrypt();
     outputText.innerHTML = decryptedText;
     console.log(decryptedText);
-    reuse();
-    // clearInput();
+    toggleVisibility();
+    clearInput();
+}
+
+function handleCopy() {
+    const textCopiado = outputText.textContent;
+    navigator.clipboard.writeText(textCopiado);
 }
 
 function encrypt() {
@@ -62,20 +69,15 @@ function decrypt() {
     return decryptMessage;
 }
 
+function toggleVisibility() {
+    contentColumnRight.classList.add("mostrar");
+    imagenColumnRight.style.display = "none";
+    subtitleColumnRight.style.display = "none";
+    textColumnRight.style.display = "none";
+    outputText.style.display = "block";
+    buttonCopy.style.display = "block";
+}
+
 function clearInput() {
     inputText.value = "";
-}
-
-function handleCopy() {
-    const textCopiado = outputText.textContent;
-    navigator.clipboard.writeText(textCopiado);
-}
-
-function reuse() {
-    imagenOcultar.style.display = "none";
-    textFinal.style.display = "none";
-    buttonCopy.style.display = "block";
-    contentColumn.classList.add("mostrar");
-    outputText.style.display = "block";
-    subtitle.style.display = "none";
 }

@@ -6,7 +6,6 @@
 
 body {
     font-family: "Inter", sans-serif;
-    background: #f3f5fc;
     background: #083163;
 }
 
@@ -39,7 +38,8 @@ body {
     justify-content: space-around;
 }
 
-.column1__area {
+.column1__textarea,
+#right-textarea {
     width: 100%;
     padding: 15px 0 0 15px;
     color: #0a3871;
@@ -53,15 +53,15 @@ body {
     border: 1px solid #1875e8;
 }
 
-.column1__area::placeholder {
+.column1__textarea::placeholder {
     color: #0a3871;
 }
 
-.column1__message {
+.info__message {
     font-size: 14px;
 }
 
-.box {
+.info__box {
     margin: 15px 0;
 }
 
@@ -72,8 +72,8 @@ body {
     gap: 24px;
 }
 
-.buttons__encrypt,
-.buttons__decrypt,
+.button__encrypt,
+.button__decrypt,
 .column2__button-copy {
     width: 100%;
     max-width: 550px;
@@ -85,7 +85,7 @@ body {
     color: #fff;
 }
 
-.buttons__decrypt {
+.button__decrypt {
     background-color: #d8dfe8;
     color: #000;
     border: 1px solid #1875e8;
@@ -101,7 +101,6 @@ body {
 .content__column2 {
     height: auto;
     background-color: #fff;
-
     border-radius: 15px;
     padding: 25px;
     display: flex;
@@ -112,36 +111,29 @@ body {
     text-align: center;
 }
 
-/* modificado desde js  */
-.content__column2.mostrar {
-    justify-content: space-between;
-}
-
 .column2__img {
     width: 60%;
+    display: none;
 }
 
-.column2__heading {
+.column2__subtitle {
     font-size: 22px;
+    font-weight: lighter;
 }
 .column2__description {
     font-size: 17px;
 }
-.hidden-img {
+
+/* modificado desde js  */
+#right-textarea {
+    min-height: 80%;
+    width: 95%;
+    border: none;
     display: none;
 }
-/* ----------------------- */
 
-#returned-message {
-    background-color: yellow;
-    color: black;
-    height: 50px;
-    outline: none;
-    border: none;
-    /* background-color: #fff; */
-    resize: none;
-    display: none;
-    min-height: 300px;
+.content__column2.mostrar {
+    justify-content: space-between;
 }
 
 @media (min-width: 700px) {
@@ -154,13 +146,13 @@ body {
         height: 90%;
     }
 
-    .column1__area {
+    .column1__textarea {
         width: 100%;
         margin: 0 auto;
         background: #fff;
     }
 
-    .column1__message {
+    .info__message {
         font-size: 16px;
     }
 
@@ -177,7 +169,7 @@ body {
         width: 50%;
     }
 
-    .column2__heading {
+    .column2__subtitle {
         font-size: 24px;
     }
 }
@@ -188,7 +180,7 @@ body {
         min-height: calc(100vh - 87px - 40px);
     }
 
-    .hidden-img {
+    .column2__img {
         display: flex;
     }
 }
