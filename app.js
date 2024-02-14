@@ -3,7 +3,7 @@ const outputText = document.querySelector("#right-textarea");
 
 const buttonEncrypt = document.querySelector(".button__encrypt");
 const buttonDecrypt = document.querySelector(".button__decrypt");
-const buttonCopy = document.querySelector(".column2__button-copy ");
+const buttonCopy = document.querySelector(".column2__button-copy");
 
 const contentColumnRight = document.querySelector(".content__column2");
 const imagenColumnRight = document.querySelector("#hidden-image");
@@ -12,6 +12,7 @@ const textColumnRight = document.querySelector(".column2__description");
 
 buttonEncrypt.addEventListener("click", handleEncryption);
 buttonDecrypt.addEventListener("click", handleDecryption);
+buttonCopy.addEventListener("click", handleCopy);
 
 const codedVowels = [
     ["e", "enter"],
@@ -37,8 +38,11 @@ function handleDecryption() {
 }
 
 function handleCopy() {
-    const textCopiado = outputText.textContent;
-    navigator.clipboard.writeText(textCopiado);
+    // Elementos de entrada de texto(input o textarea),resaltar o selecciona el contenido del elemento
+    outputText.select();
+    // Es un método obsoleto, pero aún es compatible con algunos navegadores
+    document.execCommand("copy");
+    alert("Texto copiado");
 }
 
 function encrypt() {
