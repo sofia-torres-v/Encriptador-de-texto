@@ -2,6 +2,7 @@ const inputText = document.querySelector("#user-text");
 const outputText = document.querySelector("#returned-message");
 const imagenOcultar = document.querySelector("#image-lupa");
 const textFinal = document.querySelector(".text-final");
+const subtitle = document.querySelector(".subtitle");
 const contentColumn = document.querySelector(".content__column2");
 const buttonCopy = document.querySelector(".column2__button-copy ");
 
@@ -16,17 +17,16 @@ const codedVowels = [
 function handleEncryption() {
     const encryptedText = encrypt();
     outputText.innerHTML = encryptedText;
-    imagenOcultar.style.display = "none";
-    textFinal.style.display = "none";
-    buttonCopy.style.display = "block";
-    contentColumn.classList.add("ajustar");
+    reuse();
     clearInput();
 }
 
 function handleDecryption() {
     const decryptedText = decrypt();
-    outputText.textContent = decryptedText;
-    clearInput();
+    outputText.innerHTML = decryptedText;
+    console.log(decryptedText);
+    reuse();
+    // clearInput();
 }
 
 function encrypt() {
@@ -44,7 +44,7 @@ function encrypt() {
 }
 
 function decrypt() {
-    let decryptMessage = outputText.textContent.toLowerCase();
+    let decryptMessage = inputText.value.toLowerCase();
 
     for (let i = 0; i < codedVowels.length; i++) {
         decryptMessage = decryptMessage.replaceAll(
@@ -64,4 +64,13 @@ function clearInput() {
 function handleCopy() {
     const textCopiado = outputText.textContent;
     navigator.clipboard.writeText(textCopiado);
+}
+
+function reuse() {
+    imagenOcultar.style.display = "none";
+    textFinal.style.display = "none";
+    buttonCopy.style.display = "block";
+    contentColumn.classList.add("mostrar");
+    outputText.style.display = "block";
+    subtitle.style.display = "none";
 }

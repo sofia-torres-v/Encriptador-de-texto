@@ -5,7 +5,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Encriptador de texto</title>
-
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,9 +41,9 @@
                 </div>
 
                 <div class="content__column2 ">
-                    <!-- <div id="returned-message"></div> -->
                     <img class="column2__img " id="image-lupa" src="./images/persona-con-lupa.png" alt="Ilustración de un muñeco">
-                    <p class="column2__heading"  id="returned-message" >Parece que no ingresaste ningun mensaje</p>
+                    <h3  class="subtitle">Parece que no ingresaste ningun mensaje</h3>
+                    <textarea class="column2__heading"  id="returned-message" placeholder="Parece que no ingresaste ningun mensaje"  ></textarea>
                     <p class="column2__description text-final" >Ingresa tu texto y verás los resultados aquí</p>
                     <button  onclick="handleCopy()" class="column2__button-copy hidden">Copiar</button>
                 </div>
