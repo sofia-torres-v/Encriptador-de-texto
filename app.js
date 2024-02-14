@@ -1,10 +1,15 @@
 const inputText = document.querySelector("#user-text");
 const outputText = document.querySelector("#returned-message");
+const buttonsEncrypt = document.querySelector(".buttons__encrypt");
+const buttonsDecrypt = document.querySelector(".buttons__decrypt");
 const imagenOcultar = document.querySelector("#image-lupa");
 const textFinal = document.querySelector(".text-final");
 const subtitle = document.querySelector(".subtitle");
 const contentColumn = document.querySelector(".content__column2");
 const buttonCopy = document.querySelector(".column2__button-copy ");
+
+buttonsEncrypt.addEventListener("click", handleEncryption);
+buttonsDecrypt.addEventListener("click", handleDecryption);
 
 const codedVowels = [
     ["e", "enter"],
