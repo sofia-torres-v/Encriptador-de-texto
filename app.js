@@ -23,28 +23,33 @@ const codedVowels = [
 ];
 
 function handleEncryption() {
-    const encryptedText = encrypt();
-    outputText.innerHTML = encryptedText;
-    toggleVisibility();
-    clearInput();
+    if (validateField()) {
+        const encryptedText = encrypt();
+        outputText.innerHTML = encryptedText;
+        toggleVisibility();
+        clearInput();
+    }
 }
 
 function handleDecryption() {
-    const decryptedText = decrypt();
-    outputText.innerHTML = decryptedText;
-    console.log(decryptedText);
-    toggleVisibility();
-    clearInput();
+    if (validateField()) {
+        const decryptedText = decrypt();
+        outputText.innerHTML = decryptedText;
+        console.log(decryptedText);
+        toggleVisibility();
+        clearInput();
+    }
 }
 
 function handleCopy() {
-    // Elementos de entrada de texto(input o textarea),resaltar o selecciona el contenido del elemento
+    // Para input o textarea,para seleccionar el contenido
     outputText.select();
-    // Es un método obsoleto, pero aún es compatible con algunos navegadores
+    // Método obsoleto, pero aún compatible con algunos navegadores
     document.execCommand("copy");
     alert("Texto copiado");
 }
 
+// Encriptación del mensaje reemplazando vocales según nuestro array
 function encrypt() {
     let encryptMessage = inputText.value.toLowerCase();
 
@@ -59,6 +64,7 @@ function encrypt() {
     return encryptMessage;
 }
 
+// Desencriptación del mensaje reemplazando el código por las vocales originales
 function decrypt() {
     let decryptMessage = inputText.value.toLowerCase();
 
@@ -71,6 +77,15 @@ function decrypt() {
 
     console.log(decryptMessage);
     return decryptMessage;
+}
+
+function validateField() {
+    if (inputText.value !== "") {
+        return true;
+    } else {
+        alert("Por favor, llena el campo antes de realizar la acción.");
+        return false;
+    }
 }
 
 function toggleVisibility() {
