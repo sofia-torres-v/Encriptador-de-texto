@@ -46,7 +46,17 @@ function handleCopy() {
     outputText.select();
     // Método obsoleto, pero aún compatible con algunos navegadores
     document.execCommand("copy");
-    alert("Texto copiado");
+
+    Toastify({
+        text: "Texto copiado",
+        className: "info",
+        duration: 3000,
+        gravity: "top",
+        position: "right",
+        style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+    }).showToast();
 }
 
 // Encriptación del mensaje reemplazando vocales según nuestro array
@@ -83,7 +93,16 @@ function validateField() {
     if (inputText.value !== "") {
         return true;
     } else {
-        alert("Por favor, llena el campo antes de realizar la acción.");
+        Toastify({
+            text: "Por favor, llena el campo antes de realizar la acción.",
+            className: "info",
+            duration: 3000,
+            gravity: "bottom",
+            position: "left",
+            style: {
+                background: "linear-gradient(to right, #00b09b, #6d9c1d)",
+            },
+        }).showToast();
         return false;
     }
 }

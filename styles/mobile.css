@@ -83,6 +83,7 @@ body {
     border: none;
     background-color: #0a3871;
     color: #fff;
+    cursor: pointer;
 }
 
 .button__decrypt {
