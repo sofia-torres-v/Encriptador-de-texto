@@ -9,6 +9,7 @@ body {
     background: #083163;
 }
 
+/*---------------- Header ----------- */
 .header {
     width: 90%;
     margin: 0 auto;
@@ -19,6 +20,7 @@ body {
     margin: 20px;
 }
 
+/*---------------- Main ----------- */
 .content {
     width: 80%;
     margin: 30px auto;
@@ -86,6 +88,20 @@ body {
     cursor: pointer;
 }
 
+/* Efecto para los botones */
+.button__encrypt,
+.button__decrypt,
+.column2__button-copy {
+    transition: 0.3s ease, color 0.3s ease;
+}
+
+.button__encrypt:hover,
+.button__decrypt:hover,
+.column2__button-copy:hover {
+    transform: scale(1.03);
+}
+/* ------------------------ */
+
 .button__decrypt {
     background-color: #d8dfe8;
     color: #000;
@@ -100,7 +116,6 @@ body {
 }
 
 .content__column2 {
-    height: auto;
     background-color: #fff;
     border-radius: 15px;
     padding: 25px;
@@ -123,12 +138,15 @@ body {
 }
 .column2__description {
     font-size: 17px;
+    color: #08346c;
 }
 
-/* modificado desde js  */
+/* Modificado desde JS  */
 #right-textarea {
     min-height: 80%;
+    height: 150px;
     width: 95%;
+    padding: 15px;
     border: none;
     display: none;
 }
@@ -157,10 +175,6 @@ body {
         font-size: 16px;
     }
 
-    .content__column2 {
-        height: calc(100% + 10px);
-    }
-
     .column1__buttons {
         flex-direction: row;
     }
@@ -179,6 +193,10 @@ body {
     .content {
         grid-template-columns: 1.8fr 1fr;
         min-height: calc(100vh - 87px - 40px);
+    }
+
+    .content__column2 {
+        height: calc(100% + 10px);
     }
 
     .column2__img {

@@ -42,7 +42,7 @@ function handleDecryption() {
 }
 
 function handleCopy() {
-    // Para input o textarea,para seleccionar el contenido
+    // selecciona el contenido, para input o textarea
     outputText.select();
     // Método obsoleto, pero aún compatible con algunos navegadores
     document.execCommand("copy");
@@ -54,7 +54,8 @@ function handleCopy() {
         gravity: "top",
         position: "right",
         style: {
-            background: "linear-gradient(to right, #00b09b, #96c93d)",
+            background: "#6d9c1dc0",
+            borderRadius: "8px",
         },
     }).showToast();
 }
@@ -100,7 +101,8 @@ function validateField() {
             gravity: "bottom",
             position: "left",
             style: {
-                background: "linear-gradient(to right, #00b09b, #6d9c1d)",
+                background: "#6d9c1de7",
+                borderRadius: "8px",
             },
         }).showToast();
         return false;
